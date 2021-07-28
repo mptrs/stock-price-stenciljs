@@ -17,7 +17,14 @@ jobs:
       - name: Build
         run: npm run build
       - name: Archive Production Artifact
-        uses: actions/upload-artifact@gh-pages
+        uses: actions/upload-artifact@master
         with:
           name: www
           path: www
+      - name: Download a Build Artifact
+        uses: actions/download-artifact@v2.0.10
+          with:
+          # Artifact name
+          name: www
+          # Destination path
+          path: www # optional
