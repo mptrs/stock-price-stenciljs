@@ -23,7 +23,7 @@ jobs:
           path: www
       - name: Download a Build Artifact
         uses: actions/download-artifact@v2.0.10
-          with:
+        with:
           # Artifact name
           name: www
           # Destination path
