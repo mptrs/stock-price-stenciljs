@@ -16,15 +16,7 @@ jobs:
         run: npm ci
       - name: Build
         run: npm run build
-      - name: Archive Production Artifact
-        uses: actions/upload-artifact@master
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3.7.3
         with:
-          name: www
-          path: www
-      - name: Download a Build Artifact
-        uses: actions/download-artifact@v2.0.10
-        with:
-          # Artifact name
-          name: www
-          # Destination path
-          path: www # optional
+          github_token: ${{ secrets.TOKEN }}
